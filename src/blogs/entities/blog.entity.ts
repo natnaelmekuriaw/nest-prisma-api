@@ -1,1 +1,4 @@
-export class Blog {}
+export class Blog {
+  title: string;
+  body: string;
+}
