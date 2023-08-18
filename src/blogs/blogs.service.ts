@@ -1,15 +1,17 @@
 import { Injectable } from '@nestjs/common';
 import { CreateBlogDto } from './dto/create-blog.dto';
 import { UpdateBlogDto } from './dto/update-blog.dto';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class BlogsService {
+  constructor(private readonly prisma: PrismaService) {}
   create(createBlogDto: CreateBlogDto) {
     return 'This action adds a new blog';
   }
 
   findAll() {
-    return `This action returns all blogs`;
+    return '';
   }
 
   findOne(id: number) {
