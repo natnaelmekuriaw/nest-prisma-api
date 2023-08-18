@@ -7,7 +7,8 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class BlogsService {
   constructor(private readonly prisma: PrismaService) {}
   create(createBlogDto: CreateBlogDto) {
-    return 'This action adds a new blog';
+    const blog = this.prisma.blog.create({ data: createBlogDto });
+    return blog;
   }
 
   findAll() {
@@ -15,14 +16,19 @@ export class BlogsService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} blog`;
+    return this.prisma.blog.findUnique({ where: { id } });
   }
 
   update(id: number, updateBlogDto: UpdateBlogDto) {
-    return `This action updates a #${id} blog`;
+    const article = this.prisma.blog.update({
+      where: { id },
+      data: { title: updateBlogDto.title, body: updateBlogDto.body },
+    });
+    return article;
   }
 
   remove(id: number) {
-    return `This action removes a #${id} blog`;
+    const blog = this.prisma.blog.delete({ where: { id } });
+    return blog;
   }
 }
