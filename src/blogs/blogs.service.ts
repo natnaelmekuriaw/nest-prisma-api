@@ -11,7 +11,7 @@ export class BlogsService {
   }
 
   findAll() {
-    return '';
+    return this.prisma.blog.findMany();
   }
 
   findOne(id: number) {
