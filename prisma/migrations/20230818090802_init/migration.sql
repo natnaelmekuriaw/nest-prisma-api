@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `Blog` MODIFY `body` VARCHAR(1000) NULL;
