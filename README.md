@@ -3,7 +3,7 @@
 </p>
 
 ## Description
-A nest prisma api for a crud article with postgres db server on docker with swagger documentation integration 
+A nest prisma api for crud on articles with postgres db server on docker with swagger documentation integration 
 ## License
 
 Nest is [MIT licensed](LICENSE).
